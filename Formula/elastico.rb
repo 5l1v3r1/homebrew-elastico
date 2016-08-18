@@ -1,7 +1,7 @@
 class Elastico < Formula
   desc "Command-line tool for Elasticsearch"
   homepage "https://github.com/dutchcoders/elastico"
-  url "https://github.com/dutchcoders/elastico.git", :tag => "1.1", :revision => "4228ca86f7bf1e49e0359ddde126b78336de0ade"
+  url "https://github.com/dutchcoders/elastico.git", :tag => "1.1.1", :revision => "dfd0de36799fbeda2dd9232f23774ee87d7e1213"
 
   depends_on "go" => :build
 
