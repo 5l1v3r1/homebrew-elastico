@@ -1,15 +1,18 @@
 class Elastico < Formula
   homepage "https://github.com/dutchcoders/elastico"
-  url "https://github.com/dutchcoders/elastico/archive/1.0.0.tar.gz"
-  sha256 "8e2dde6fe86a338c1b24a83e78cd18da93ef3a1ec2acaf08a37d3cdc9e017325"
-  head "https://github.com/dutchcoders/elastico.git"
+  url "https://github.com/dutchcoders/elastico.git", :tag => "1.1", :revision => "4228ca86f7bf1e49e0359ddde126b78336de0ade"
+  version "1.1"
 
   depends_on "go" => :build
 
   def install
     ENV["GOPATH"] = buildpath
 
-    cd buildpath/"src/github.com/dutchcoders/elastico/" do
+
+    clipath = buildpath/"src/github.com/dutchcoders/elastico"
+    clipath.install Dir["*"]
+
+    cd clipath do
       system "go", "build", "-o", buildpath/"elastico"
     end
 
